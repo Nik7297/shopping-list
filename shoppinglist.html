@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sopping list</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="soppinglist.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="navbar">
+            <i class="fa-solid fa-shop"></i>
+            <h1>Shopping Store</h1>
+        </div>
+        <div class="center">
+            <p class="heading">Add new Products</p>
+            <div class="inputs">
+
+                <div class="sectionquantity">
+                    <span class="section">
+                        <p>Section</p>
+                        <select id="select">
+                            <option value="" disabled selected>Catagery</option>
+                            <option value="Fruits&Vegetables">Fruits&Vegetables</option>
+                            <option value="Meat&Seafoods">Meat&Seafoods</option>
+                            <option value="Dairy">Dairy</option>
+                            <option value="FrozenFoods">FrozenFoods</option>
+                            <option value="Breads&pasta">Breads&pasta</option>
+                            <option value="Snacks">Snacks</option>
+                            <option value="Beverages">Beverages</option>
+                            <option value="Cleaning">Cleaning</option>
+                            <option value="other">other</option>
+                        </select>
+                    </span>
+
+                    <span class="quantity">
+                        <p>Quantity</p>
+                        <input type="number" placeholder="Quantity">
+
+                    </span>
+                </div>
+
+                <span class="name">
+                    <span>
+                        <p>Name</p>
+                        <input type="text" placeholder="Enter Name">
+                    </span>
+
+                </span>
+            </div>
+
+            <span class="btn">
+                <button type="submit">Add to list</button>
+            </span>
+
+        </div>
+
+        <div class="boxes">
+            <div class="giveinpbox box1">
+                <h3>Fruits & Vegetables</h3>
+            </div>
+            <div class="giveinpbox box2">
+                <h3>Meat & Seafoods</h3>
+            </div>
+            <div class="giveinpbox box3">
+                <h3>Dairy</h3>
+            </div>
+            <div class="giveinpbox box4">
+                <h3>Frozen foods</h3>
+            </div>
+            <div class="giveinpbox box5">
+                <h3>Breads & pasta</h3>
+            </div>
+            <div class="giveinpbox box6">
+                <h3>Snacks</h3>
+            </div>
+            <div class="giveinpbox box7">
+                <h3>Beverages</h3>
+            </div>
+            <div class="giveinpbox box8">
+                <h3>Cleaning</h3>
+            </div>
+            <div class="giveinpbox box9">
+                <h3>other</h3>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="footer">
+            
+           <a href="https://www.linkedin.com/in/nitesh-kumawat-558328208/">
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-tiktok"></i>
+            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-brands fa-twitter"></i>
+           </a>
+        </div>
+    </div>
+
+    <script>
+        let slct = document.querySelector(".section select")
+        let nameinp = document.querySelector(".name input")
+        let btn = document.querySelector(".btn button")
+        let quantityinput = document.querySelector(".quantity input")
+        let box1 =document.querySelector(".box1")
+        let box2 =document.querySelector(".box2")
+        let box3 =document.querySelector(".box3")
+        let box4 =document.querySelector(".box4")
+        let box5 =document.querySelector(".box5")
+        let box6 =document.querySelector(".box6")
+        let box7 =document.querySelector(".box7")
+        let box8 =document.querySelector(".box8")
+        let box9 =document.querySelector(".box9")
+
+
+        btn.onclick = () => {
+
+            let ico=document.createElement("i")
+            ico.setAttribute("class","fa-solid fa-xmark")
+             
+
+
+            let h5 = document.createElement("h5")
+             h5.innerHTML = nameinp.value
+
+             let quantity = document.createElement("span")
+             quantity.innerHTML = quantityinput.value
+
+             h5.appendChild(quantity)
+             ico.insertAdjacentElement("afterend",quantity)
+             
+
+             h5.appendChild(ico)
+             h5.insertAdjacentElement("afterbegin",ico)
+             
+            if(slct.value === 'Fruits&Vegetables'){
+                
+                box1.appendChild(h5)
+                box1.insertAdjacentElement("beforeend",h5)
+            }
+            if(slct.value === 'Meat&Seafoods'){
+                box2.appendChild(h5)
+            box2.insertAdjacentElement("beforeend",h5)
+            }
+            if(slct.value === 'Dairy'){
+                box3.appendChild(h5)
+            box3.insertAdjacentElement("beforeend",h5)
+            }
+            if(slct.value === 'FrozenFoods'){
+                box4.appendChild(h5)
+            box4.insertAdjacentElement("beforeend",h5)
+            }
+            if(slct.value === 'Breads&pasta'){
+                box5.appendChild(h5)
+            box5.insertAdjacentElement("beforeend",h5)
+            }
+            if(slct.value === 'Snacks'){
+                box6.appendChild(h5)
+            box6.insertAdjacentElement("beforeend",h5)
+            }
+            if(slct.value === 'Beverages'){
+                box7.appendChild(h5)
+            box7.insertAdjacentElement("beforeend",h5)
+            }
+            if(slct.value === 'Cleaning'){
+                box8.appendChild(h5)
+            box8.insertAdjacentElement("beforeend",h5)
+            }
+            if(slct.value === 'other'){
+                box9.appendChild(h5)
+            box9.insertAdjacentElement("beforeend",h5)
+            }
+
+
+        //    else{
+        //     box9.appendChild(h5)
+        //     box9.insertAdjacentElement("beforeend",h5)
+        //    }
+            
+            ico.onclick = ()=>{
+                h5.remove();
+            }
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
